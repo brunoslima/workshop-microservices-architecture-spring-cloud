@@ -1,0 +1,47 @@
+Implementação funcional
+Ordem de execução:
+
+Obs: O workshop-congigs é um repositório externo git.
+     Link repositório: https://github.com/brunoslima/workshop-configs
+
+1) config-server (IDE)
+2) workshop-eureka-server (IDE + Navegador)
+	2.1) Executar o projeto na IDE
+	2.2) Abrir o navegador: http://localhost:8761/
+3) product-service (IDE + POSTMAN)
+	3.1) Teste com o POSTMAN:
+		POST - RAW:
+			http://localhost:9001/products/
+
+			{
+			    "productName":"Celular X21",
+			    "productCategory":"Eletrônico",
+			    "productValue":2500.00
+			}
+4) shoppingCart-service (IDE)
+5) workshop-api-gateway (IDE + POSTMAN)
+	5.1) Teste com o POSTMAN: PRODUCT
+		POST - RAW:
+			http://localhost:9191/products/
+
+			{
+			    "productName":"Celular X21",
+			    "productCategory":"Eletrônico",
+			    "productValue":2500.00
+			}
+		GET - http://localhost:9191/products/1
+
+			{
+			    "productName":"Celular X21",
+			    "productCategory":"Eletrônico",
+			    "productValue":2500.00
+			}
+
+	5.1) Teste com o POSTMAN: ShoppingCart
+		POST - RAW:
+			http://localhost:9191/carts/
+			{
+				"userId":"1",
+				"productId":"1"
+			}
+		GET - http://localhost:9191/carts/1
